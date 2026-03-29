@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>petrol cost calculator</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+    <div class="machine"> 
+        <div class="shell">
+            <div class="inner">
+
+                <div class="screen">
+                    <div class="price-section"> <!-- this is where our fixed price is displayed on the screen -->
+                        <div class="screen-label">cost per litre</div>
+                        <div class="screen-value" id="price-display">AED 1.72 / L</div>
+                    </div>
+                    <div class="divider"></div> <!-- this is the line that separates the price from the total -->
+                    <div>
+                        <div class="screen-label">total</div> 
+                        <div class="total-value" id="total-display">AED 0.00</div> <!-- our total is default at 0.00 until we calculate it -->
+                    </div>
+                </div>
+
+                <div class="bottom-row">
+                    <button class="calc-btn" onclick="calculate()">get total</button> <!-- a button is used to call a function that gives us our total -->
+                    <div class="input-wrap">
+                        <div class="screen-label">litres</div>
+                        <input class="litre-input" type="text" inputmode="decimal" id="litres" placeholder="0.0"> <!-- this is the input where we enter the amount of litres we want to calculate the total for! it has a placeholder of 0.0 and accepts whole + decimal numbers -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>( made by gayl ★ )</p>
+    </footer>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>

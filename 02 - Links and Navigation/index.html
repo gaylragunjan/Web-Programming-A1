@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>what's over the garden wall?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+    <nav class="nav"> <!-- a nav is a section that contains links to different parts of the page, usually formatted in a horizontal bar thats on top of the page -->
+        <a href="#synopsis">Synopsis</a> • <!-- this is how we make hyperlinks! we use anchor tags that link to an element with that specific ID. so when we click this, it takes us to the part of the page that has that ID -->
+        <a href="#characters">Characters</a> • <!-- the dot just goes in between each link to make it look nicer! i implemented them this way because it was a very quick and easy instead of making them into separate tags -->
+        <a href="#credits">Credits</a>
+    </nav>
+
+    <section class="start" id="home">
+        <img id="logo" src="./assets/logo.png">
+        <a href="https://www.primevideo.com/detail/Over-the-Garden-Wall/0FEUBN93OS5XM1ZJ8W7W81BKMJ" target="_blank"> <!-- this hyperlink is an example of how to link to an external website!  "_blank" makes it so that when you click the link, it opens in a new tab instead of replacing the current page -->
+            <img id="watch" src="./assets/watch.png"> <!-- i wanted this hyperlink to be a button instead of text, so i just made the image into the link -->
+        </a>
+    </section>
+
+    <section class="story" id="synopsis"> <!-- i was getting a little confused on the classes an IDs so this one is a little weird with the naming, though it still works and each section and element is still styled correctly! -->
+        <h2 class="sectiontitle">Synopsis</h2>
+        <div class="synopsis">
+            <p>Welcome to the world of the unknown, where frogs sing and the leaves are always a golden orange. A whimsical yet menacing forest full of fairytale-like wonder. Brothers Wirt and Greg are clueless on how they ended up in this strange world, and yearn to go back home. As they venture through the woods, they encounter peculiar creatures, and even stranger human beings, learning lessons on life, and death, while uncovering the many secrets of the mysterious Unknown.</p>
+            <img src="./assets/decor.png">
+        </div>
+    </section>
+
+    <section class="section characters" id="characters">  
+        <h2 class="chartitle">Characters</h2>
+
+        <div class="gallery">
+            <div class="card active" onclick="infoswitch('wirt', this)"> <!-- i used a bit of js for this exercise, and i used it to make the character gallery interactive (will be explained further later) -->
+                <img class="portrait" src="./assets/wirt.png"> <!-- each character card has an image of the character (i didnt read the exercise instructions properly and didnt know images werent needed hehe) and also their name! -->
+                <div class="name">Wirt</div>
+            </div>
+            <div class="card" onclick="infoswitch('greg', this)"> <!-- when you click on a card, it runs this function called infoswitch that holds the character's name as a parameter. "this" refers to the element itself (our card) so that when interacted with, the function also knows which card was clicked on and what should be styled as active -->
+                <img class="portrait" src="./assets/greg.png">
+                <div class="name">Greg</div>
+            </div>
+            <div class="card" onclick="infoswitch('beatrice', this)">
+                <img class="portrait" src="./assets/beatrice.png">
+                <div class="name">Beatrice</div>
+            </div>
+            <div class="card" onclick="infoswitch('woodsman', this)">
+                <img class="portrait" src="./assets/the woodsman.png">
+                <div class="name">The Woodsman</div>
+            </div>
+            <div class="card" onclick="infoswitch('beast', this)">
+                <img class="portrait" src="./assets/the beast.png">
+                <div class="name">The Beast</div>
+            </div>
+        </div>
+
+        <div class="infopanel"> <!-- this is the area where the character bios are shown! it changes based on which card is clicked on using the function mentioned beforehand -->
+            <div class="info visible" id="infowirt"> <!-- "info visible" is the default styling for the first card, so that when the page is open, this card is preloaded -->
+                <div class="infoname">WIRT</div>
+                <p class="bio">The main protagonist and the series' self-appointed contrarian. An epitome of a pessimist, his seriousness and disdain for the world gets them in trouble a lot, despite being the older of the two. He thinks of himself as a wise know-it-all, only to forget he is also just a naïve young boy entering a realm of something he's never known before.</p>
+            </div>
+            <div class="info" id="infogreg"> <!-- the rest are invisible until active! -->
+                <div class="infoname">GREG</div>
+                <p class="bio">A witty boy with overflowing creativity and ideas, always acting on impulse with the widest grin to be seen in the Unknown. His innocence and endless fascination with the woods does him and his brother more favors than Wirt's seriousness ever could. He's quite fond of wandering, making songs, and making friends along the way!</p>
+            </div>
+            <div class="info" id="infobeatrice">
+                <div class="infoname">BEATRICE</div>
+                <p class="bio">The tritagonist and the brothers' tour guide to the Unknown. Introduced as a talking bluebird but later revealed to be cursed by a pastor. She is closed off and calculated, and talks with sprinkles of sarcasm even in her good-hearted advice.</p>
+            </div>
+            <div class="info" id="infowoodsman">
+                <div class="infoname">THE WOODSMAN</div>
+                <p class="bio">A grieving father, desperate to bring his dearest daughter Anna back to life. Ordered by the Beast to chop edelwood so that his daughter's soul stays lit in his dark lantern, he is reserved, determined, and a loving family man who wanders the Unknown in quiet torment.</p>
+            </div>
+            <div class="info" id="infobeast">
+                <div class="infoname">THE BEAST</div>
+                <p class="bio">The main antagonist. An ominous entity that lurks the Unknown and is feared by all its inhabitants. In order to survive, he needs edelwood tree sap made from children's souls like Wirt and Greg's. He is not ready to accept death yet.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="section credits" id="credits">
+        <h2 class="sectiontitle">Credits & Acknowledgements</h2>
+        <div class="container">
+            <div class="left">
+
+                <div class="columns">
+                    <div class="creditsheading">DIRECTION & CREATION</div>
+                    <ul class="creditslist">
+                        <li>Patrick McHale <span>Creator, Director, Writer</span></li> <!-- spans are tags that allow us to style specific parts of an element differently! in this case, i wanted the person's role to be styled differently from their name, so that its a lot nicer to look at since its in a list format, but still clearly shows who they are and what they do -->
+                        <li>Nick Cross <span>Character Design Lead</span></li>
+                        <li>Nate Cash <span>Storyboard Artist</span></li>
+                        <li>Hanna Ahn <span>Art Director</span></li>
+                        <li>Katie Mitroff <span>Supervising Producer</span></li>
+                        <li>Rob Sorcher <span>Executive Producer</span></li>
+                    </ul>
+                </div>
+
+                <div class="columns">
+                    <div class="creditsheading">VOICW CAST</div>
+                    <ul class="creditslist">
+                        <li>Elijah Wood <span>Wirt</span></li>
+                        <li>Collin Dean <span>Greg</span></li>
+                        <li>Melanie Lynskey <span>Beatrice</span></li>
+                        <li>Christopher Lloyd <span>The Woodsman</span></li>
+                        <li>Samuel Ramey <span>The Beast</span></li>
+                        <li>Tim Curry <span>The Edelwood King</span></li>
+                        <li>John Cleese <span>The Highwayman</span></li>
+                        <li>Bebe Neuwirth <span>Adelaide</span></li>
+                    </ul>
+                </div>
+
+                <div class="columns">
+                    <div class="creditsheading">MUSIC & SOUND</div>
+                    <ul class="creditslist">
+                        <li>The Blasting Company <span>Main Composers, Soundtrack Creators</span></li>
+                        <li>Brandon Armstrong <span>Composer, Musician</span></li>
+                        <li>Joshua Kaufman <span>Composer, Musician</span></li>
+                        <li>Justin Rubenstein <span>Composer, Musician</span></li>
+                        <li>Jack Jones <span>Vocalist for Into the Unknown</span></li>
+                        <li>Samuel Ramey <span>Vocalist for Come Wayward Souls</span></li>
+                        <li>Oz Fritz <span>Audio Mixer</span></li>
+                        <li>James Plotkin <span>Additional Audio Engineer</span></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>( this is a webpage made for educational purposes. Over the Garden Wall and all related characters, artwork, and media are the property of Cartoon Network Studios and their respective creators! )</p>
+    </footer>
+
+</body>
+
+    <script> /* hehe this is the logic part (i got lots of help from W3schools and a little bit of assistance from AI, though thats cause i was getting really confused with my own IDs heh.. (note to self.. name your classes and IDs better!) */
+        function infoswitch(id, card) { /* we declare the name of our function and the parameters it needs. the ID is the name of the character that was clicked, and the card is the element itself that was clicked on */
+            document.querySelectorAll('.info').forEach(el => el.classList.remove('visible')); /* querySelectorAll takes every element that has the class "info" or the character bios, and for each of them, it disables their visibility, so that when we click on a new card, the previous bio goes away */
+            document.querySelectorAll('.card').forEach(el => el.classList.remove('active')); /* the same thing happens for the cards so that the last card that was visible goes back to normal styling */
+            document.getElementById('info' + id).classList.add('visible'); /* then, it takes the ID of the character that was clicked and adds "info" to the front of it to get the ID of the bio that corresponds to that character */
+            card.classList.add('active'); /* and last, it adds the active styling to the card that was clicked on so that we can see which bio is currently being shown!!! */
+        }
+    </script>
+
+</html>

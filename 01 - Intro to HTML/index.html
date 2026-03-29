@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bomu's cookbook!</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico"> <!-- a favicon is the little icon that shows us on the tab next to the title! this is how you set it up -->
+</head>
+
+<body>
+
+    <div class="screen main" id="main"> <!-- our webpage is made up of 3 "screens", which are just divs we can hide and show to navigate through each section -->
+        <div class="logo">
+            <img src="./assets/logo.png"> <!-- as you can see, i separated the elements of the page into different divs or gave them unique IDs to make it easier to style and position! -->
+        </div>
+        <div class="main-container">
+            <div class="left-img">
+                <img src="./assets/burgersteak.png">
+            </div>
+            <div class="right-info">
+                <h1>burger steak</h1>
+                <img src="./assets/line break i cant figure it out with css.png" id="line-break">
+                <p>a dish consisting of juicy pan-fried burger patties smothered in savory, creamy gravy, typically served over steamed white rice!</p>
+                <img src="./assets/button.png" id="button" onclick="document.getElementById('main').hidden = true; document.getElementById('ingredients-screen').hidden = false;"> <!-- this is how you make a button that navigates to another screen! the "onclick" attribute runs the code inside it when the button is clicked. in this case, it turns on the 'hidden' attribute for the main screen and turns it off for the ingredients screen, which is how it replaces it -->
+            </div>
+        </div>
+    </div>
+
+    <div class="screen ingredients" id="ingredients-screen" hidden>
+        <div class="navigation" id="ingredients-nav">
+            <h2>ingredients</h2>
+            <img src="./assets/right arrow.png" id="right-arrow" onclick="document.getElementById('ingredients-screen').hidden = true; document.getElementById('method-screen').hidden = false;">
+        </div>
+        <div class="info-box" id="ingredients-box"> 
+            <ul> <!-- our ingredients are formatted in an unordered list -->
+                <li>500g ground beef</li>
+                <li>1 small onion, finely chopped</li>
+                <li>2 cloves garlic, minced</li>
+                <li>1 egg</li>
+                <li>1/2 cup breadcrumbs</li>
+                <li>1 tbsp soy sauce</li>
+                <li>1/2 tsp black pepper</li>
+                <li>1/2 tsp salt</li>
+                <li>2 tbsp butter or oil</li>
+                <li>2 tbsp all-purpose flour</li>
+                <li>2 cups beef broth</li>
+                <li>1 cup mushroom caps, sliced</li>
+                <li>1 small onion, sliced</li>
+                <li>salt & pepper to taste</li>
+                <li>steamed white rice</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="screen method" id="method-screen" hidden>
+        <div class="navigation" id="method-nav">
+            <h2>recipe</h2>
+            <div class="nav-buttons">
+                <img src="./assets/home.png" id="home" onclick="document.getElementById('method-screen').hidden = true; document.getElementById('main').hidden = false;"> <!-- the same concept as the previous buttons! -->
+                <img src="./assets/left arrow.png" id="left-arrow" onclick="document.getElementById('method-screen').hidden = true; document.getElementById('ingredients-screen').hidden = false;">
+            </div>
+        </div>
+        <div class="info-box" id="method-box">
+            <div class="scroll">
+                <ol> <!-- our method is formatted in an ordered list since the steps are meant to be followed in a specific order -->
+                    <li>In a large bowl, combine the ground beef, finely chopped onion, minced garlic, egg, breadcrumbs, soy sauce, black pepper, and salt. Mix until well combined.</li>
+                    <li>Divide the mixture into 4 equal portions and shape each into a patty.</li>
+                    <li>Heat butter or oil in a large skillet over medium heat. Cook patties for 4-5 minutes per side until browned and cooked through. Remove and set aside.</li>
+                    <li>In the same skillet, cook the sliced onion until softened. Sprinkle flour over and stir for another minute.</li>
+                    <li>Gradually pour in the beef broth while stirring to prevent lumps. Cook until the gravy thickens, add mushroom caps, and cook for 3-5 minutes. Season with salt and pepper.</li>
+                    <li>Return the patties to the skillet and spoon gravy over them. Simmer a few minutes to let the flavors meld.</li>
+                    <li>Serve hot over steamed white rice, topped with extra gravy if desired!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <footer> <!-- a footer is usually where you put things like copyright info or credits! (i just chose to put my name) -->
+        <p>( made by gayl ★ )</p>
+    </footer>
+
+</body>
+
+</html>

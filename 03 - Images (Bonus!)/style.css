@@ -1,0 +1,52 @@
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); }
+
+body {
+    background: #FFF9EA;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; /* lines them up right in the center! */
+    gap: 35px;
+}
+
+.A, .B, .C, .D { /* all their similar attributes are added here so we dont have to keep repeating these things */
+    width: 150px;
+    height: 150px;
+    align-content: center;
+    justify-content: center;
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 20px;
+    text-align: center;
+}
+
+.A {
+    border: 5px solid rgb(136, 32, 241); /* this gives our first square a purple border that is 5 pixels wide! */
+    box-shadow: 5px 5px 7px red; /* it then has an offset shadow thats red. the first two values are how far the shadow goes vertically and horizontally from the square and the last value is how blurry the shadow is */
+}
+
+.B {
+    border: 5px solid rgb(1, 208, 5); 
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.9); /* this is the opposite of an offset! (if you couldnt tell from the name...) its a shadow that goes inside of the square instead! the values work the same way (i also adjusted the opacity with the built-in VSCode color picker */
+}
+
+.C {
+    box-shadow: 0 0 0 5px rgb(255, 153, 0), 0 0 0 10px blue, 0 0 0 15px red, 0 0 0 20px green; /* multiple borders dont really exist in HTML as far as i know, but there is a work around! by creating multiple box shadows, and not offsetting them or blurring them at all, it can pass as a box border. by adding a 4th value which is width, we can make them all have 5 pixel differences and we can recreate the effect of having multiple wrapping borders */
+    border-radius: 8px; /* rounds the corners */
+}
+
+.D {
+    border: 5px solid maroon;
+    text-shadow: 6px 5px rgba(0, 0, 0, 0.567); /* this adds an offset shadow to the text inside the div! */
+}
+
+p {
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

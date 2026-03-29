@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Sampler</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+  <h1>audio sampler</h1>
+
+  <div class="main">
+
+    <div class="speech-section"> <!-- our text to speech section heh -->
+      <label>text to speech</label>
+      <textarea id="text" placeholder="type here..."></textarea> <!-- this is where the user will type the text they want to be spoken, with a placeholder so they know where to type if the big textbox wasnt already obvious hehe -->
+      <button id="say" onclick="omgitstalking()">say it!</button> <!-- when the user clicks this button, the omgitstalking function will be called to handle the text to speech functionality -->
+    </div>
+
+    <div class="soundboard-section"> <!-- our soundboard grid -->
+      <div class="grid" id="grid"></div> 
+      <div class="nav">
+        <button class="arrow" id="prev" onclick="pageturn(-1)">🡨</button> <!-- these are our arrow buttons that well use to look through our different soundboard pages! on every click, the page number gets reduced by 1! -->
+        <span id="page-label">Page 1 / 3</span> <!-- this is where we will show the current page number and total pages of our soundboard. its a span because we just want to change the text inside it, not the whole element, trying it with a ptag or a div just made it more dificult to style -->
+        <button class="arrow" id="next" onclick="pageturn(1)">🡪</button> <!-- this adds (1) to our page number when clicked -->
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+        <p>( made by gayl ★ )</p>
+  </footer>
+
+</body>
+
+<script src="script.js"></script> <!-- this is where we link our javascript file that contains all the functionality for our webpage! -->
+
+</html>

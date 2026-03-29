@@ -1,0 +1,125 @@
+body {
+    min-height: 100vh;
+    min-width: 1400px; /* thisprevents our layout from moving or breaking when the window is reeized */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color: #17072b;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 40px;
+}
+
+nav h1, .left h2, .right h2 { /* a lot of these styles share attributes so we style them together */
+    font-family: Tahoma, sans-serif;
+    text-decoration: underline; 
+    text-underline-offset: 20%; /* this moves the underline decoration a bit to match the example image */
+    margin: 0; /* this removes the default margin that browsers add to headings, which helps fix some spacing */
+}
+
+nav h1 {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+nav .links {
+    display: flex;
+    gap: 30px;
+}
+
+.links a {
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 30px;
+    text-decoration: none; /* this removes the default underline from the links */
+}
+
+.flex {
+    display: grid; /* we make this a grid container to split our sections easily */
+    grid-template-columns: 65% 35%; /* in te original image, they arent exactly 50/50 so we can adjust the column sizes to match it better! adding these together equal to 100% of the width of the page */
+    flex: 1; /* this makes the flex section take up all the extra space between the nav and footer which helps keep the footer at the bottom of the page */
+}
+
+.left {
+    grid-column: 1; /* this makes the left section go in the first column */
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    gap: 16px; /* this is the space between the elements in the left section */
+}
+
+.left h2 {
+    color: #000000;
+    font-size: 40px;
+}
+
+.left p {
+    color: #000000;
+    font-family: Arial;
+    font-size: 25px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.left img {
+    width: 900px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.right {
+    background-color: #172d67;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin-top: 2%; /* in the image i was copying, there was a bit of space between the nav to the right section, same for the bottom! */
+    margin-bottom: 4%; /* so this is how we do that (i tried my best to align it with the image on the left) */
+    gap: 50px;
+    box-sizing: border-box; /* since we dont want things overflowing but want to adjust the padding, we use this to make sure the padding is included in the size of the element instead of being added on to it */
+}
+
+.right h2 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.right ul {
+    color: #ffffff;
+    font-size: 25px;
+    font-family: Arial;
+    line-height: 2; 
+    list-style-type: "- "; /* the original image uses dashes instead of the default bullets for the list! and when i checked what style type that was, i couldnt find it BUUTTTTT i found a workaround to make it look the same by just typing down what i want the bullet to be */
+    list-style-position: inside; /* this removes the default indentation lists usually have! */
+    padding: 0;
+    margin: 0;
+}
+
+.images {
+    display: flex;
+    gap: 25px;
+}
+
+.images img { width: 200px; }
+
+footer p {
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 18px;
+    margin: 0;
+}
+
+footer {
+    background-color: #8c15e9;
+    text-align: center;
+    padding: 14px;
+    margin-top: auto;
+}

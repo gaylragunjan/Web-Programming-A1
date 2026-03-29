@@ -1,0 +1,77 @@
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); }
+
+
+body {
+    background: #FFF9EA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #3C2319; /* these are used to style text that arent in specific tags but are in the body of the webpage, like the slashes between the links! */
+    font-size: 20px;
+    font-family: pixel;
+}
+
+.content {
+    height: 90vh; /* centers our elements to the middle of the users view of the page */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* this positions the elements in this class to be at the left edge and right edge specifically which is really handy */
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.top h1 {
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 40px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+}
+
+.controls a {
+    color: #3C2319;
+    font-family: pixel;
+    font-weight: 800; /* this is another way to bolden fonts! */
+    font-size: 20px;
+}
+
+.controls a:hover {
+    cursor: pointer;
+    text-decoration: underline; /* this underlines the links when hovered on */
+}
+
+.images {
+    display: flex;
+    gap: 12px;
+}
+
+.images img {
+    width: 412px; 
+    height: 241px;
+    border: 7px solid #3C2319;
+    border-radius: 2px; /* this rounds the corners of our images */
+    box-shadow: 2px 2px 10px #0d09073b; /* and this is a box shadow, which differs from the filter version because this follows the box shape of the image */
+}
+
+p {
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}

@@ -1,0 +1,249 @@
+/* starting from here, properties ive already explained in the first exercise will not be explained again! hehe */
+
+@font-face { font-family: 'alcemo'; src: url('./assets/Alcemo Regular.otf'); }
+
+* { box-sizing: border-box; } /* this line just makes it so that the padding is included in the element's total width and height instead of adding extra space and creating overflow */
+
+html {
+    min-width: 1024px;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* usually, hyperlinks with anchor ids usually just teleport/jump you to the section you want to go to, but i didn't like it so that led me to finding this property that smoothly scrolls down for you! */
+}
+
+body {
+    background: #0D0907;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'alcemo', serif;
+}
+
+.nav {
+    background-image: url("./assets/nav bar.png");
+    background-size: 100% 100%;
+    position: fixed; /* this keeps our nav bar in place! */
+    top: 0; left: 0; right: 0; /* since our nav bar is an image and we want it to stretch across the whole page, we set the top, left, and right properties to 0 so that it fills the top part ofth screen with no gaps */
+    height: 70px;
+    z-index: 100; /* this puts our nav bar on top of every other element in the page, so that its constantly visible and doesn't get covered up by any other elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* the space between the links and the edge of the navigation bar itself */
+    gap: 30px; /* this is the space between our links */
+    filter: drop-shadow(0 0 20px #0d0907c8);
+}
+
+.nav a {
+    color: #0D0907;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.nav a:hover { font-weight: bold; } /* this boldens the link when hovered on! */
+
+.start {
+    background-image: url('./assets/hero bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.start img#logo {
+    width: 800px;
+    margin-bottom: 10%;
+    filter: drop-shadow(0 0 20px #0d0907c8);
+    animation: floaty 3s ease-in-out infinite; 
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); } 
+}
+
+a img#watch {
+    position: absolute;
+    bottom: 70px; right: 50px;
+    width: 240px;
+    transition: transform 0.32s; /* this attribute is helful in transitioning to hover/active states smoothly! it gives it a timeframe on how long the animation should take */
+}
+
+.start img#watch:hover { transform: translateY(-8px); } /* this is the animation we were just referring to :) */
+
+.story {
+    width: 100%;
+    height: 95vh; /* if you check out all the class styles for each section, you'll see they usualy have min-heights/heights of around 90-100 viewport height units. this is to make the elements of each secion fill up the entire visable part of the page so that when using the nav bar or just scrolling manually, everything feels right in place */
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectiontitle, .chartitle {
+    color: #FFF6DB;
+    font-size: 75px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sectiontitle { margin-bottom: 15px; } /* our two titles hav different bottom margins so that they look better with the different elements that go under them! */
+
+.synopsis {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.synopsis p {
+    color: #FFF6DB;
+    font-size: 25px;
+    text-align: justify;
+    line-height: 1.9;
+}
+
+.synopsis img { width: 40%; } 
+
+.characters {
+    background: url('./assets/character bg.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    min-height: 90vh;
+    scroll-margin-top: 90px; /* i had a weird issue where when i click on the characters link in the nav bar, the top part of the section gets covered up by the nav bar since its fixed at the top of the page, so this helped fix that */
+}
+
+.chartitle { margin-top: 100px; }
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 1px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.05s;
+}
+
+.card:hover { cursor: pointer;  transform: translateY(-5px); }
+
+.portrait { width: 150px; height: 165px; }
+
+.name {
+    color: #FFF6DB;
+    text-align: center;
+    font-size: 17px;
+}
+
+.infopanel {
+    background-image: url('./assets/char info.png');
+    background-size: 100% 100%;
+    border-radius: 5px;
+    width: 44%;
+    padding: 40px 30px;
+    margin: 0 auto; /* this centers the info panel since we made it a block element, it tries to fill up the whole width of the page but since its width has to only be 44% for it to be sized properly, it goes to the left edge and just stays stuck there */
+}
+
+.info { display: none; } /* since we only want the character bios to show up when we click on a card, we set their default display to none so that they are hidden until we want them to be shown */
+
+.info.visible {
+    display: block; 
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.infoname {
+    color: #0D0907;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.bio {
+    color: #0D0907;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.credits {
+    background-image: url("./assets/credits bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.container {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    gap: 60px;
+}
+
+.creditsheading {
+    color: #FFF6DB;
+    font-size: 22px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #4F4C46; /* this adds a little visible line break (using just the bottom part of a border) between the heading and the list */
+}
+
+.creditslist {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+}
+
+.creditslist li {
+    color: #fff6dbc4;
+    font-size: 18px;
+}
+
+.creditslist li span { /* this styles the spans that are in our list items! */
+    color: #4F4C46;
+    font-size: 15px;
+    font-style: italic;
+    display: block; /* this just makes them go to the next line so that the person's name and their role are on separate lines */
+    margin-top: 4px;
+}
+
+.footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.footer p {
+    font-size: 13px;
+    color: #fff6db4d;
+}

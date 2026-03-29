@@ -1,0 +1,134 @@
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); }
+
+body { /* a lot if not all of these styles were already tackled in the previous exercises, so we won't go into too much detail on them! */
+    background-image: url("./assets/heh.png");
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: pixel;
+}
+
+.shell {
+    background-image: url(./assets/background.png);
+    background-size: 100% 100%;
+    filter: drop-shadow(3px 3px 10px #0d090755);
+    width: 543.2px; /* fun fact, this is formatted and sized as the main container from my first exercise!!! */
+    height: 436.2px;
+    animation: floaty 4s ease-in-out infinite; 
+}
+
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+
+.screen {
+    background: #4A321E;
+    border: 7px solid #3C2319;
+    border-radius: 10px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+}
+
+.price-section { padding-bottom: 5px; }
+
+.divider {
+    background: #8a7020;
+    margin: 0 0 5px 0;
+    height: 5px;
+}
+
+.screen-label {
+    color: #a07840;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.screen-value {
+    color: #d4a840;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.total-value {
+    color: #d4a840;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.bottom-row {
+    display: flex;
+    align-items: stretch; /* this makes sure that both the button and the input wrap stretch to the same height, making it look even */
+    height: 70px;
+    gap: 10px;
+}
+
+.calc-btn {
+    background: #817264;
+    border: 7px solid #4A392C;
+    border-radius: 10px;
+    width: 80px;
+    color: #4A392C;
+    font-family: pixel;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.calc-btn:active { transform: scale(0.97); } /* when hovered on, the button scales down a bit to give it a nice tactile feel! */
+
+.input-wrap {
+    background: #4A321E;
+    border: 7px solid #3C2319;
+    border-radius: 10px;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8px 12px;
+    display: flex;
+}
+
+.litre-input {
+  color: #d4a840;
+    font-family: pixel;
+    font-size: 20px;
+    font-weight: 500;
+    background: transparent;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding: 0;
+    margin-top: 2px;
+}
+
+.litre-input::placeholder { color: #5a3a20; }
+
+p {
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0; left: 0;
+    text-align: center;
+}

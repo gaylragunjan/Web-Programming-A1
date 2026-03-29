@@ -1,0 +1,158 @@
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); }
+
+* { margin: 0; padding: 0; box-sizing: border-box;  } /* what this simply does is make it so that when we set the width and height of an element, it includes the padding and border in that width and height, instead of adding it on top */
+body {
+    background: #FFF9EA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 24px;
+    min-height: 100vh;
+    color: #3C2319;
+    font-family: pixel;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.soundboard-section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.grid { /* this is the grid container for our soundboard buttons, in the last instances i used this type of display, i only made use of columns. but were using rows now too to follow the exercise example! */
+    display: grid;
+    grid-template-rows: repeat(3, 78px); /* these makes 3 even rows, without having to declare each one separately */
+    grid-template-columns: repeat(3, 108px); /* same goes here */
+    gap: 10px; /* this is the gap between them */
+    margin-bottom: 40px;
+}
+
+.btn {
+    background: #FFF9EA;
+    border: 5px solid #3C2319;
+    border-radius: 2px;
+    padding: 7px;
+    color: #3C2319;
+    box-shadow: 2px 2px 20px #0d09071c;
+    font-family: pixel;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.1s, color 0.1s;
+}
+
+.btn:hover { background: #3C2319; color: #FFF9EA; transform: scale(0.97); }
+
+.btn:active { background: #3C2319; color: #FFF9EA; }
+
+.btn.empty { opacity: 0.25; cursor: default; } /* if a grid doesnt have a sound assigned to it (counted as .empty) we make it lower opacity and also change the cursor so it looks unclickable */
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.arrow {
+    background: #3C2319;
+    border: 5px solid #3C2319;
+    color: #FFF9EA;
+    box-shadow: 2px 2px 20px #0d090733;
+    font-size: 22px;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.1s;
+}
+
+.arrow:hover { opacity: 0.8; transform: scale(0.97); }
+
+.arrow:disabled { opacity: 0.25; cursor: default; }
+
+#page-label {
+    color: #3C2319;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 93px;
+}
+
+.speech-section {
+    width: 336px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.speech-section label { 
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#status {
+    min-height: 19px;
+    font-size: 14px;
+    color: #3c23196e;
+}
+
+#text {
+    background: #FFF9EA;
+    border: 5px solid #3C2319;
+    color: #3C2319;
+    box-shadow: 2px 2px 20px #0d090733;
+    width: 100%; 
+    border-radius: 2px;
+    min-height: 216px;
+    font-size: 16px;
+    font-family: pixel;
+    padding: 12px;
+    resize: none; /* textareas by default are resizable. i used them instead of inputs because they are better for larger amounts of text! we disable the resizability like this */
+}
+
+#text::placeholder { color: #3c2319b6; } 
+
+#say {
+    background: #3C2319;
+    border: 5px solid #3C2319;
+    box-shadow: 2px 2px 20px #0d090733;
+    border-radius: 2px;
+    color: #FFF9EA;
+    font-family: pixel;
+    font-size: 16px;
+    padding: 10px 19px;
+    align-self: center;
+    cursor: pointer;
+    transition: opacity 0.1s;
+}
+
+#say:hover { opacity: 0.8; transform: scale(0.97); }
+
+
+p {
+    color: #3c2319b6;
+    font-family: pixel;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 13px; left: 0;
+    text-align: center;
+}

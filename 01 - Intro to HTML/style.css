@@ -1,0 +1,211 @@
+@font-face { font-family: tommy bold; src: url("./assets/Tommy Soft Bold.otf"); }
+@font-face { font-family: tommy; src: url("./assets/Tommy Soft Medium.otf"); } /* to define a custom font, we use "@font-face" (we use @ to define specific instructions that control how styles are applied, instead of styling elements directly) */
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); } /* i used 3 different fonts, so we have to give each of them a name to reference them by and also the file path! */
+
+[hidden] { display: none !important; } /* this attribute is in brackets because its an attribute selector! so this only applies to elements with the "hidden" attribute, and it makes them not show up on the page */
+
+body {
+    background: #FFF9EA;
+    min-height: 100vh; /* this ensures that the body of our webpage takes up and shows the full height of the screen (vh stands for viewport height). without it, the body would only take up as much space as the content it holds, which would cause issues with the overall layout */
+    display: flex; /* this makes the whole page a container that lets us easily mess with the layout of its content */
+    flex-direction: column; /* this makes sure that the content in our page is arranged from top to bottom instead of side to side */ 
+    justify-content: center; /* this and the next line center the content of our page vertically and horizontally */
+    align-items: center;
+    font-family: tommy bold;
+    overflow: hidden; /* this hides anything that accidentally goes outside the boundaries and cause a scrollbar to appear, which i wanted to hide since i didnt like the look of (they just scrolled to dead space anyway heh) */
+}
+
+.main {
+    background-image: url("./assets/main.png");
+    background-size: 100% 100%; /* this is how we make sure the background image fills the whole div instead of repeating or being cut off */
+    width: 543.2px; /* these are the super duper verrrryyyyyyy specific dimensions, since i edited every asset in figma too big, and had to scale everything down by 75%. maybe not the best way to do it but it worked for me! */
+    height: 436.2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* this is the spacing between all the content in our main screen */
+    filter: drop-shadow(3px 3px 10px #0d090755); /* since our background image is a transparent image, a drop shadow filter is better than using a box shadow since that would just put a boxy shadow around the image, instead of following its shape */
+    animation: wiggle 5s ease-in-out infinite 1s; /* this is how we implement animations! we specify the animation name, how long it should take to complete a cycle, its timing (theres lots of options for this), and how many times it should repeat, which i chose to be infinite. the last value at the end is the delay between each cycle */
+}
+
+@keyframes wiggle { /* keyframes are used to define the different parts of our animation, and what should happen at each frame */
+    0%, 100% { transform: rotate(-0.2deg) translate(-0.2px, 0px); } /* this means, at the beginning and end of the animation, the image is transformed by rotating it -0.2deg and translating it by moving it down 0.2 pixels and to the left 0.2 pixels */
+    25% { transform: rotate(0.2deg)  translate(0.2px, 0.2px); }
+    50% { transform: rotate(-0.2deg) translate(0px, -0.2px); } /* the rest of these are the same thing but building up to the middle of the animation and back down to the end */
+    75% { transform: rotate(0.2deg)  translate(-0.2px, 0.3px); }
+}
+
+.main-container {
+    display: grid; /* this is a way to layout our content into a select number of rows and columns! (we only use columns in this case) */
+    grid-template-columns: 211.1px 1fr; /* these are the sizes of each column, the more you add, the more columns you make. the first size is about the same size as the image that goes in it and the second one is 1 fraction, which is basically just the rest of the space not taken up by the first */
+    gap: 8px;
+    padding: 0 3% 7%; /* padding is the space between the content and its closest border. we only want padding on the left, right, and bottom. which is what each value represents in the same order */
+}
+
+.logo img {
+    width: 308px;
+    height: 156.2px;
+    object-fit: contain; /* this makes sure our imagw keeps its aspect ratio and fits inside the dimensions we set without getting cut off or stretched! */
+    animation: shaky 2.5s infinite;
+    margin-top: -4px;
+}
+
+@keyframes shaky {
+    0%, 100% { transform: rotate(1.3deg); }
+    50% { transform: rotate(-1.3deg); }
+}
+
+.left-img img {
+    width: 211.1px;
+    height: 203.8px;
+}
+
+.right-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-info h1 {
+    font-family: tommy bold;
+    font-size: 45.6px;
+    color: #3C2319;
+    align-self: center;
+    line-height: 0.2px; /* this is the space between lines of text, since our h1 is so big, the default line height is also big, which causes a lot of unnecessary space between the title and the description. by setting it to a smaller value, we can reduce that space */
+}
+
+.right-info p {
+    font-family: tommy;
+    font-size: 13.6px;
+    color: #3C2319;
+    align-self: center;
+    padding-left: 3%; /* i had to nudge the description a bit away from the edge to line things up better so this is how i did it */
+    line-height: 1.08;
+}
+
+.right-info img {
+    width: 177.5px;
+    height: 56px;
+    object-fit: contain;
+    align-self: center;
+    margin-top: 3.2px;
+}
+
+.right-info img#line-break { /* since theres multiple images in the right section, we give them different IDs since they have to be styled differently */
+    width: 271.2px;
+    height: 5px;
+    margin-top: 2.4px;
+    margin-bottom: 0.4px;
+}
+
+.right-info img#button:hover { /* ":" is used to style spefic states of an element, could be hovered, or active! */
+    cursor: pointer; /* this changes our cursor into the pointy hand when we hover over the button image (just a good indicator!) */
+    animation: movingbutton 1s infinite;
+}
+
+@keyframes movingbutton {
+    0%, 100% { transform: rotate(0deg); }
+    25%, 75% { transform: rotate(-0.5deg); }
+    50% { transform: rotate(0.5deg); }
+}
+
+.ingredients, .method { /* since these two sections are formatted the same, we can style them together */
+    background-image: url("./assets/secondary.png");
+    background-size: cover;
+    width: 543.2px;
+    height: 521.9px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(3px 3px 10px #0d090755);
+    animation: wiggle 5s infinite;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: -24px;
+    padding: 0 3%;
+}
+
+.navigation#ingredients-nav { gap: 91%; }
+
+.navigation#method-nav { gap: 124%; }
+
+.navigation h2 {
+    font-family: tommy bold;
+    font-size: 40px;
+    color: #3C2319;
+    margin-top: -4px;
+}
+
+.navigation img#left-arrow, .navigation img#right-arrow { 
+    width: 38.6px; 
+    height: 50.4px; 
+    object-fit: contain; 
+}
+
+.navigation img#home { 
+    width: 56px; 
+    height: 50.4px; 
+    object-fit: contain; 
+}
+
+.navigation img:hover { transform: scaleY(0.9); cursor: pointer; } /* sometimes you dont need a whole animation, if its just a simple effect like this! */
+
+.nav-buttons { display: flex; gap: 2px; }
+
+.info-box {
+    background-image: url("./assets/info box.png");
+    background-size: 100% 100%;
+    width: 499.5px;
+    height: 304.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box ul {
+    columns: 2; /* this splits our list into 2 columns! it automatically balances it out too which is awesum */
+    list-style-type: disc; /* this makes the bullet points their default solid circle shape, which wasnt showing up for some reason without this */
+    font-family: tommy;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #3C2319;
+    gap: 6%;
+}
+
+.info-box ol {
+    font-family: tommy;
+    font-size: 13.6px;
+    line-height: 1.5;
+    color: #3C2319;
+    width: 100%;
+    margin-left: -15px;
+}
+
+.scroll { /* this is the div that holds our method list. and that list is so so so long that it would go outside the boundaries of the info box, so we have to make this div scrollable! */
+    width: 440px;
+    height: 240px;
+    overflow-y: scroll;
+    overflow-x: hidden; /* i didnt like the look of the horizontal scrollbar in the bottom so i got rid of it */
+    padding-right: 25.6px; /* this moves the content a bit so even without the scrollbar its still visible */
+}
+
+.scroll::-webkit-scrollbar { width: 6.4px; } /* this and the line under is how we style the scrollbar! webkit from my research is an engine that powers browsers like chrome and safari, and this is how we target certain stylish elements in a webpage */
+.scroll::-webkit-scrollbar-thumb { background: #3C2319; border-radius: 5.6px; } /* the thumb is the clickable and draggable part of the scrollbar, which is the only one i wanted to show up and styled */
+
+p {
+    font-family: pixel;
+    font-size: 13px;
+    color: #3C2319;
+    text-align: center;
+}
+
+footer {
+    position: fixed; /* this makes our footer stay in the same place which is at the very very bottom */
+    bottom: 0;
+}

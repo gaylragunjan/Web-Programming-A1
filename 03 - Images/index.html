@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filters & pokemon!</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="top">
+            <div class="header">
+                <h1>choose a filter :</h1>
+            </div>
+            <div class="controls"> <!-- taking inspiration from my seniors' old project, i decided to also make the filters be options instead of adding multiple images with different filters -->
+                <a onclick="filter('none')">none</a> / <!-- i turned them into links so they would just be text, cause i didnt like the look of buttons -->
+                <a onclick="filter('sepia(100%)')">sepia</a> / <!-- when you click on a link, it triggers a function called "filter", which what it does is apply the filter on all of the images -->
+                <a onclick="filter('grayscale(100%)')">grayscale</a> /
+                <a onclick="filter('invert(100%)')">invert</a> /
+                <a onclick="filter('blur(3px)')">blur</a> /
+                <a onclick="filter('brightness(150%)')">brightness</a>
+            </div>
+        </div>
+
+        <div class="images"> <!-- these are our three images! -->
+            <img src="./assets/illustration 1.png">
+            <img src="./assets/illustration 2.png">
+            <img src="./assets/illustration 3.png">
+        </div>
+    </div>
+
+    <footer>
+        <p>( Illustrations by Tomokazu Komiya. © Pokémon / Nintendo / Creatures / GAME FREAK. )</p> <!-- this is the copyright and credits for all three because they were all made by the same artist -->
+    </footer>
+
+</body>
+
+    <script> 
+        function filter(style) { /* we declare our function name and the parameters it needs */
+            document.querySelectorAll(".images img").forEach(img => { /* it selects every image that is in the class "images" and for each image, */
+                img.style.filter = style; /* style that is attached to whatever link is chosen, is applied to the image */
+            });
+        }
+    </script>
+
+</html>

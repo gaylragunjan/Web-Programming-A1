@@ -1,0 +1,44 @@
+@font-face { font-family: pixel; src: url("./assets/PixelifySans.ttf"); }
+
+body {
+    background-image: url(./assets/background.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.display {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    width: 467.62px;
+    height: 592.02px;
+    filter: drop-shadow(3px 3px 10px #0d09075e); 
+    z-index: 1000; /* positions it on top of the video */
+    pointer-events: none; /* because its on top, it would be in the way and block the video controls, so we remove its ability to interact with the cursor */
+}
+
+video {
+    width: 350.23px;
+    height: 199px;
+    position: absolute; /* this means we can position it precisely where we want, without it being affected by the other elements */
+    top: 41%; /* adjusted precisely to fit in the frame! */
+}
+
+p {
+    color: #3C2319;
+    font-family: pixel;
+    font-size: 13px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
