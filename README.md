@@ -4,7 +4,7 @@ This is a collection of exercises I finished for my first assessment in the cour
 ## [1] Bomu's Cookbook
 I finished this exercise pretty quick while in class, but I wasn't satisfied with the outcome and the design choices I made. Which is why I made another version and spent more time on the CSS, since making the structure was very simple. I think it turned out really neat! 
 
-➜  [open site](https://gaylragunjan.github.io/Web-Programming-A1/01 - Intro to HTML/index.html)
+➜  [open site]
 
 ## [2] What's Over the Garden Wall?
 This was fun to do! I chose a show I really liked and thats why I was really inspired and motivated to do this one in particular. I kind of forgot that we weren't supposed to use pictures here, but I hope its alright because I made use of some basic JS here as well. So maybe the extra attributes could be counted as bonuses (hehe).
