@@ -11,6 +11,7 @@ This was fun to do! I chose a show I really liked, so I was really inspired and 
 This one was pretty easy to format out and is mre simple in terms of design. I really like Pokémon card art, so I used some of my favorite illustrations from my favorite artist for the images. While looking through samples and some projects from friends in L5, I decided to add a little bit of scripting here too, so you can try out the interactivity yourself!
 
 ### [Bonus] Replicate the Divs
+Super simple. Not much to say!
 
 ## [4] DigiFest 2022!
 Looking at the sample, I think I did a pretty good job recreating it. I was really pleased with myself because I gave the image a good hard look, and the problem-solving gears in my head started spinning immediately! So it was fun figuring this one out.
